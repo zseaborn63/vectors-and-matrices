@@ -34,7 +34,8 @@ After completing this assignment, you should be able to:
 * Passing unit tests
 * No PEP8 or Pyflakes warnings or errors
 * No use of third-party libraries - only built in `+ - / *` operators and the `math` module
-* **No use of `for` or `while` loops**
+* Hard Mode
+  * **No use of `for` or `while` loops**
 
 ## Normal Mode
 
