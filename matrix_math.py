@@ -1,5 +1,7 @@
 # This be my homework, homie
 class ShapeException(Exception):
+    print("This is invalid.  Shapes are not compatible")
+    exit()
     pass
 
 
@@ -11,15 +13,38 @@ def magnitude():
     pass
 
 
-def shape():
+def shape(num1):
+    for row in num1:
+        num_rows = len(num1)
+        if type == list:
+            num_col = len(row)
+            return num_rows, num_col
+        else:
+            return num_rows,
     pass
 
 
-def vector_add():
+def vector_add(vec1, vec2):
+    if shape(vec1) != shape(vec2):
+        raise ShapeException
+    else:
+        output_vector = []
+        for i in range(len(vec1)):
+            output_num = vec1[i] + vec2[i]
+            output_vector.append(output_num)
+        return output_vector
     pass
 
 
 def vector_sub():
+    if shape(vec1) != shape(vec2):
+        raise ShapeException
+    else:
+        output_vector = []
+        for i in range(len(vec1)):
+            output_num = vec1[i] - vec2[i]
+            output_vector.append(output_num)
+        return output_vector
     pass
 
 
@@ -27,7 +52,12 @@ def vector_sum():
     pass
 
 
-def vector_multiply():
+def vector_multiply(vec, scalar):
+    output_vector = []
+        for i in range(len(vec)):
+            output_num = vec[i] * scalar
+            output_vector.append(output_num)
+        return output_vector
     pass
 
 
@@ -43,8 +73,7 @@ def matrix_col():
     pass
 
 
-def matrix_scalar_multiply(matrix, scalar):
-    scalar = -1
+def matrix_scalar_multiply(matrix, scalar)
     output_matrix = []
     for row in matrix:
         output_row = []
@@ -57,6 +86,7 @@ def matrix_scalar_multiply(matrix, scalar):
 
 
 def matrix_vector_multiply():
+
     pass
 
 
