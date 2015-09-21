@@ -1,3 +1,4 @@
+# This be my homework, homie
 class ShapeException(Exception):
     pass
 
