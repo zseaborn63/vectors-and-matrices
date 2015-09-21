@@ -43,7 +43,16 @@ def matrix_col():
     pass
 
 
-def matrix_scalar_multiply():
+def matrix_scalar_multiply(matrix, scalar):
+    scalar = -1
+    output_matrix = []
+    for row in matrix:
+        output_row = []
+        for column in row:
+            calculated_value = column * scalar
+            output_row.append(calculated_value)
+        output_matrix.append(output_row)
+    return output_matrix
     pass
 
 
@@ -53,5 +62,3 @@ def matrix_vector_multiply():
 
 def matrix_matrix_multiply():
     pass
-
-
