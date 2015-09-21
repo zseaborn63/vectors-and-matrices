@@ -65,11 +65,15 @@ def vector_mean():
     pass
 
 
-def matrix_row():
+def matrix_row(matrix, idx):
+    row = matrix[idx]
+    return row
     pass
 
 
-def matrix_col():
+def matrix_col(matrix, idx):
+    col = [row[idx] for row in matrix]
+    return col
     pass
 
 
