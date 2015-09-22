@@ -52,7 +52,7 @@ def vector_add(vec1, vec2):
     pass
 
 
-def vector_sub():
+def vector_sub(vec1, vec2):
     if shape(vec1) != shape(vec2):
         raise ShapeException
     else:
@@ -78,10 +78,10 @@ def vector_sum(*args):
 
 def vector_multiply(vec, scalar):
     output_vector = []
-        for i in range(len(vec)):
-            output_num = vec[i] * scalar
-            output_vector.append(output_num)
-        return output_vector
+    for i in range(len(vec)):
+        output_num = vec[i] * scalar
+        output_vector.append(output_num)
+    return output_vector
     pass
 
 
@@ -106,7 +106,7 @@ def matrix_col(matrix, idx):
     pass
 
 
-def matrix_scalar_multiply(matrix, scalar)
+def matrix_scalar_multiply(matrix, scalar):
     output_matrix = []
     for row in matrix:
         output_row = []
@@ -118,8 +118,15 @@ def matrix_scalar_multiply(matrix, scalar)
     pass
 
 
-def matrix_vector_multiply():
 
+def matrix_vector_multiply(matrix, vector):
+    final_vec = []
+    for row in matrix:
+        placeholder = 0
+        for x in range(len(vector)):
+            placeholder += row[x] * vector[x]
+        final_vec.append(placeholder)
+    return final_vec
     pass
 
 
