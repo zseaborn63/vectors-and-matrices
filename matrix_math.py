@@ -130,5 +130,9 @@ def matrix_vector_multiply(matrix, vector):
     pass
 
 
-def matrix_matrix_multiply():
+def matrix_matrix_multiply(matrix1, matrix2):
+    new_mtx2_row = []
+    mtx2_col_as_row = matrix_col(matrix2, len(matrix2))
+    new_mtx2_row.append(mtx2_col_as_row)
+    return new_mtx2_row
     pass
