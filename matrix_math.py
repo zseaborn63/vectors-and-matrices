@@ -20,7 +20,12 @@ def dot(vec1, vec2):
     pass
 
 
-def magnitude():
+def magnitude(vec):
+    mag = 0
+    for x in range(len(vec)):
+        mag += vec[x] ** 2
+        mag = mag ** 0.5
+    return mag
     pass
 
 
@@ -80,7 +85,12 @@ def vector_multiply(vec, scalar):
     pass
 
 
-def vector_mean():
+def vector_mean(*args):
+    vec_len = len(args)
+    vecs_added = vector_sum(*args)
+    scalar = 1 / vec_len
+    vec_avg = vector_multiply(vecs_added, scalar)
+    return vec_avg
     pass
 
 
