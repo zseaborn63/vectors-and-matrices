@@ -1,11 +1,22 @@
 # This be my homework, homie
+from functools import reduce
+
 class ShapeException(Exception):
     print("This is invalid.  Shapes are not compatible")
     exit()
     pass
 
 
-def dot():
+def dot(vec1, vec2):
+    if shape(vec1) != shape(vec2):
+        raise ShapeException()
+    vec_for_addition = []
+    vec_len = range(len(vec1))
+    for x in vec_len:
+        pos_multiplication = vec1[x] * vec2[x]
+        vec_for_addition.append(pos_multiplication)
+    dot_total = reduce(lambda x, y: x + y, vec_for_addition)
+    return dot_total
     pass
 
 
@@ -48,7 +59,15 @@ def vector_sub():
     pass
 
 
-def vector_sum():
+def vector_sum(*args):
+    vecs_total = []
+    vec_len = len(args[0])
+    for x in range(0, vec_len):
+        replacement_num = 0
+        for vec in args:
+            replacement_num += vec[x]
+        vecs_total.append(replacement_num)
+    return vecs_total
     pass
 
 
