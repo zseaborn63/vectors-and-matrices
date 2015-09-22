@@ -131,8 +131,13 @@ def matrix_vector_multiply(matrix, vector):
 
 
 def matrix_matrix_multiply(matrix1, matrix2):
+    final_matrix = []
     new_mtx2_row = []
-    mtx2_col_as_row = matrix_col(matrix2, len(matrix2))
-    new_mtx2_row.append(mtx2_col_as_row)
-    return new_mtx2_row
+    for x in range(len(matrix2[1])):
+        new_mtx2_row += matrix_col(matrix2, x)
+        new_mtx2_row.append(new_mtx2_row)
+        for x in range(len(matrix1)):
+            dude = matrix_vector_multiply(matrix1, new_mtx2_row)
+        final_matrix.append(dude)
+    return final_matrix
     pass
