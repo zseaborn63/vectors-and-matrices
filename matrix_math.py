@@ -2,8 +2,6 @@
 from functools import reduce
 
 class ShapeException(Exception):
-    print("This is invalid.  Shapes are not compatible")
-    exit()
     pass
 
 
@@ -37,32 +35,18 @@ def shape(num1):
             return num_rows, num_col
         else:
             return num_rows,
-    pass
-
 
 def vector_add(vec1, vec2):
     if shape(vec1) != shape(vec2):
         raise ShapeException
     else:
-        output_vector = []
-        for i in range(len(vec1)):
-            output_num = vec1[i] + vec2[i]
-            output_vector.append(output_num)
-        return output_vector
-    pass
-
+        return [vec1[i] + vec2[i] for i in range(len(vec1))]
 
 def vector_sub(vec1, vec2):
     if shape(vec1) != shape(vec2):
         raise ShapeException
     else:
-        output_vector = []
-        for i in range(len(vec1)):
-            output_num = vec1[i] - vec2[i]
-            output_vector.append(output_num)
-        return output_vector
-    pass
-
+        return [vec1[i] - vec2[i] for i in range(len(vec1))]
 
 def vector_sum(*args):
     vecs_total = []
@@ -77,13 +61,7 @@ def vector_sum(*args):
 
 
 def vector_multiply(vec, scalar):
-    output_vector = []
-    for i in range(len(vec)):
-        output_num = vec[i] * scalar
-        output_vector.append(output_num)
-    return output_vector
-    pass
-
+    return [vec[i] * scalar for i in range(len(vec))]
 
 def vector_mean(*args):
     vec_len = len(args)
@@ -91,33 +69,20 @@ def vector_mean(*args):
     scalar = 1 / vec_len
     vec_avg = vector_multiply(vecs_added, scalar)
     return vec_avg
-    pass
-
 
 def matrix_row(matrix, idx):
     row = matrix[idx]
     return row
-    pass
-
 
 def matrix_col(matrix, idx):
-    col = [row[idx] for row in matrix]
-    return col
-    pass
-
+    return [row[idx] for row in matrix]
 
 def matrix_scalar_multiply(matrix, scalar):
     output_matrix = []
     for row in matrix:
-        output_row = []
-        for column in row:
-            calculated_value = column * scalar
-            output_row.append(calculated_value)
+        output_row = [column * scalar for column in row]
         output_matrix.append(output_row)
     return output_matrix
-    pass
-
-
 
 def matrix_vector_multiply(matrix, vector):
     final_vec = []
@@ -127,8 +92,6 @@ def matrix_vector_multiply(matrix, vector):
             placeholder += row[x] * vector[x]
         final_vec.append(placeholder)
     return final_vec
-    pass
-
 
 def matrix_matrix_multiply(matrix1, matrix2):
     final_matrix = []
@@ -140,4 +103,3 @@ def matrix_matrix_multiply(matrix1, matrix2):
             dude = matrix_vector_multiply(matrix1, new_mtx2_row)
         final_matrix.append(dude)
     return final_matrix
-    pass
